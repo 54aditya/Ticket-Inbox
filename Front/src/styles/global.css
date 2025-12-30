@@ -1,0 +1,332 @@
+/* GLOBAL RESETS & TYPOGRAPHY */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #1e3a8a; /* Dark blue heading */
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #1e3a8a;
+}
+
+/* BUTTONS & INPUTS */
+button,
+input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #3b82f6; /* Blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input:not([type]),
+select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin: 5px 0;
+  width: 100%; /* Full width in forms/filters */
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* CONTAINER (for App content) */
+#root > div { /* Targeting the BrowserRouter's div */
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+
+/* FORMS (Login/Register) */
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+/* TICKET INBOX PAGE LAYOUT */
+.ticket-inbox-container {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* FILTERS Component */
+.filters-container {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    align-items: center;
+}
+
+.filters-container input {
+    flex-grow: 1;
+    max-width: 300px; /* Limit search bar width */
+}
+
+.filters-container select {
+    width: auto;
+    flex-shrink: 0;
+    min-width: 150px;
+}
+
+/* TICKET TABLE Component */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #eff6ff; /* Light blue header */
+  color: #1e3a8a;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* TICKET ROW */
+tr {
+  transition: background-color 0.15s;
+}
+
+tr:hover {
+  background-color: #f0f4f8; /* Very light hover effect */
+  cursor: pointer;
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.pagination-container span {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* LOADER & EMPTY STATE */
+.loader,
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2em;
+  color: #6b7280;
+}
+
+/* TICKET DRAWER */
+.ticket-drawer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 400px;
+    background: #fff;
+    height: 100%;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000; /* Ensure it's on top */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.drawer-header button {
+    background: #ef4444; /* Red close button */
+}
+
+.drawer-header button:hover {
+    background: #dc2626;
+}
+
+.ticket-details-controls select {
+    width: 48%;
+    margin-right: 2%;
+}
+
+.note-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ADD NOTE form */
+.add-note-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.add-note-form input {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.add-note-form button {
+    flex-shrink: 0;
+    width: auto;
+}
+
+/* NOTES LIST */
+.notes-list p {
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border-left: 3px solid #3b82f6;
+    font-size: 0.9em;
+}
+
+/* Status & Priority Colors (for visual flair in table/drawer) */
+.status-open { color: #22c55e; font-weight: 600; } /* Green */
+.status-pending { color: #f97316; font-weight: 600; } /* Orange */
+.status-resolved { color: #1e40af; font-weight: 600; } /* Dark Blue */
+
+.priority-low { color: #22c55e; }
+.priority-medium { color: #f59e0b; } /* Yellow/Amber */
+.priority-high { color: #ef4444; } /* Red */
+
+
+/* --- Navbar Styling --- */
+
+/* Assuming these variables are defined in your global CSS */
+:root {
+  --primary: #3b82f6; /* Blue */
+  --white: #ffffff;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  background: var(--white);
+  padding: 1rem 2rem; /* Vertical and horizontal padding */
+  box-shadow: var(--shadow); /* Subtle lift */
+  display: flex;
+  justify-content: space-between; /* Puts logo/title on left, links on right */
+  align-items: center;
+  margin-bottom: 20px; /* Space below the navbar */
+  border-bottom: 1px solid #e5e7eb; /* Optional subtle separator */
+}
+
+.navbar h1 {
+  /* Title/Logo style */
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0; /* Remove default margin */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* Space between links */
+  align-items: center;
+}
+
+.nav-links a {
+  /* Default link style */
+  text-decoration: none; /* Remove underline */
+  color: #6b7280; /* Neutral grey for regular links */
+  font-weight: 500;
+  padding: 8px 12px; /* Add padding for clickable area */
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  /* Hover effect for all links */
+  color: var(--primary);
+  background-color: #f3f4f6; /* Very light background on hover */
+}
+
+/* Specific styling for the Login link (to look like a button) */
+.nav-links a[to="/login"] {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.nav-links a[to="/login"]:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+  color: var(--white);
+}
+
+/* Specific styling for the Register link (optional outlined button) */
+.nav-links a[to="/register"] {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background-color: transparent;
+}
+
+.nav-links a[to="/register"]:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
