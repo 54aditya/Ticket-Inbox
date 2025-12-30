@@ -12,9 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:5173",
-    "https://ticket-inbox-2.onrender.com"
-  ]
+  origin: "http://localhost:5173"
 }));
 
 
